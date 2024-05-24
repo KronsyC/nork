@@ -1,8 +1,7 @@
-#include "qguiapplication.h"
-#include <iostream>
-
 #include<QGuiApplication>
 #include<QQmlApplicationEngine>
+#include<QQmlContext>
+#include "register.h"
 
 int main(int argc, char **argv) {
 
@@ -11,9 +10,9 @@ int main(int argc, char **argv) {
 
     QQmlApplicationEngine engine;
 
-
-    engine.load(QUrl(QStringLiteral("qrc:/mainscreen.qml")));
-
+    ise::nork::register_types("ise.nork", 0, 1);
+    
+    engine.load(QUrl(QStringLiteral("qrc:/mainwindow.qml")));
 
     if(engine.rootObjects().isEmpty()){
       return -1;

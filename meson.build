@@ -7,13 +7,25 @@ project('nork', 'cpp',
 qt6 = import('qt6')
 qt6_dep = dependency('qt6', modules : ['Core', 'Gui', 'Qml'])
 
+
+incdir = include_directories('include')
+
 sources = files(
   'src/main.cc',
+  'src/register.cc',
+  'src/ui/mainwindow.cc'
 )
 
 qrc_sources = files(
   'ui/qml.qrc'
 )
+
+subdir('include/ui')
+# moc_files = import('include/ui/moc.meson')
+
+moc_files = qt6.compile_moc(headers : moc_files,
+                            include_directories: incdir,
+                            dependencies: qt6_dep)
 
 # QT Resources file for QML 
 
@@ -22,9 +34,9 @@ qresources = qt6.compile_resources(
   sources: qrc_sources
 )
 
-incdir = include_directories('include')
 
 sources += qresources
+sources += moc_files
 
 exe = executable('nork', sources,
   install : true,

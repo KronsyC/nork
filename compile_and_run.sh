@@ -1,5 +1,4 @@
 #!/usr/bin/sh
 
 
-./compile.sh
-./build/nork
+./compile.sh&&./build/nork
