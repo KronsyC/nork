@@ -13,11 +13,13 @@ incdir = include_directories('include')
 sources = files(
   'src/main.cc',
   'src/register.cc',
-  'src/ui/mainwindow.cc'
+  'src/ui/mainwindow.cc',
+  'src/ui/minimap.cc',
 )
 
 qrc_sources = files(
-  'ui/qml.qrc'
+  'ui/qml.qrc',
+  'images/images.qrc'
 )
 
 subdir('include/ui')

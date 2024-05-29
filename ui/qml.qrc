@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/">
     <file>mainwindow.qml</file>
-    <file>Message.qml</file>
+    <file>LocationIndicator.qml</file>
+    <file>MiniMap.qml</file>
   </qresource>
 </RCC>

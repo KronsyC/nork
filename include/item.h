@@ -19,6 +19,18 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-namespace ise::nork {
-void register_types(const char* ns, int ver_minor, int ver_major);
-}
+#ifndef NORK_ITEM_H
+#define NORK_ITEM_H
+
+#include<string>
+
+namespace nork {
+class Item {
+  std::string name;
+  std::string description;
+  std::string texture;
+  std::string item_id;
+};
+} // namespace nork
+
+#endif // !NORK_ITEM_H

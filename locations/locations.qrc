@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/locations">
+    <file>spec.json</file>
+  </qresource>
+</RCC>

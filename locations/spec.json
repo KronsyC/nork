@@ -1,0 +1,30 @@
+{
+  "loc.kitchen": {
+    "scene": "images/sc/kitchen.jpg"
+  },
+  "loc.south_wing": {
+    "scene": "images/sc/south_wing.jpg"
+  },
+  "loc.west_wing": {
+    "scene": "images/sc/west_wing.jpg"
+  },
+  "loc.east_wing": {
+    "scene": "images/sc/east_wing.jpg"
+  },
+  "loc.ta_lounge": {
+    "scene": "images/sc/ta_lounge.jpg"
+  },
+  "loc.north_chairs": {
+    "scene": "images/sc/north_chairs.jpg"
+  },
+  "loc.south_chairs": {
+    "scene": "images/sc/south_chairs.jpg"
+  },
+  "loc.forest_room": {
+    "scene": "images/sc/forest_room.jpg"
+  },
+  "loc.north_wing": {
+    "scene": "images/sc/north_wing.jpg"
+  }
+
+}

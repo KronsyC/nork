@@ -19,6 +19,21 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-namespace ise::nork {
-void register_types(const char* ns, int ver_minor, int ver_major);
-}
+#ifndef NORK_UI_MINIMAP_H
+#define NORK_UI_MINIMAP_H
+#include "qtmetamacros.h"
+#include <QCoreApplication>
+#include <QDebug>
+#include <QObject>
+
+namespace nork::ui {
+class MiniMap : public QObject {
+    Q_OBJECT
+
+  public:
+    explicit MiniMap(QObject* parent = nullptr);
+  public slots:
+  signals:
+};
+} // namespace nork::ui
+#endif // !NORK_UI_MINIMAP

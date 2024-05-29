@@ -18,7 +18,3 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //
-
-namespace ise::nork {
-void register_types(const char* ns, int ver_minor, int ver_major);
-}

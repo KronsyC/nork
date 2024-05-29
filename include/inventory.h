@@ -7,8 +7,8 @@
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
 //
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
 //
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -19,6 +19,39 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-namespace ise::nork {
-void register_types(const char* ns, int ver_minor, int ver_major);
-}
+#ifndef NORK_INVENTORY_H
+#define NORK_INVENTORY_H
+
+#include "item.h"
+#include <cstdint>
+#include <memory>
+
+namespace nork {
+class Inventory {
+    using SLOTIDX_T = uint16_t;
+
+    SLOTIDX_T nslots;
+
+    ///
+    ///
+    ///
+    struct InventorySlot {
+        std::unique_ptr<nork::Item> item;
+
+        InventorySlot(std::unique_ptr<nork::Item> item);
+
+        static InventorySlot blank();
+    };
+
+  public:
+    Inventory(SLOTIDX_T nslots);
+
+    ///
+    /// Removes an item from an inventory slot
+    /// returns wether an item was removed or not
+    ///
+    bool removeItem(SLOTIDX_T slot);
+};
+} // namespace nork
+
+#endif // !NORK_INVENTORY_H

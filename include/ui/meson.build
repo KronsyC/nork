@@ -1,3 +1,4 @@
 moc_files = files(
-    'mainwindow.h'
+    'mainwindow.h',
+    'minimap.h'
     )
