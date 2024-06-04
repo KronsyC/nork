@@ -24,21 +24,19 @@
 
 #include "duck.h"
 #include "encounter.h"
-#include "json.hpp"
-#include <iostream>
 
 namespace nork {
 
 class Item {
   public:
     // Constructors
-    Item(DuckInstance duck) : kind(ItemKind::Duck) { new (&data.duck) DuckInstance(std::move(duck)); }
+    Item(DuckInstancePlacement duck) : kind(ItemKind::Duck) { new (&data.duck) DuckInstancePlacement(std::move(duck)); }
 
     Item(EncounterInstance encounter) : kind(ItemKind::Encounter) {
         new (&data.encounter) EncounterInstance(std::move(encounter));
   }
 
-  DuckInstance* duck(){
+  DuckInstancePlacement* duck(){
     if(this->kind == ItemKind::Duck) return &this->data.duck;
     else return nullptr;
   }
@@ -52,7 +50,7 @@ class Item {
     Item(const Item& other) : kind(other.kind) {
         switch (other.kind) {
         case ItemKind::Duck:
-            new (&data.duck) DuckInstance(other.data.duck);
+            new (&data.duck) DuckInstancePlacement(other.data.duck);
             break;
         case ItemKind::Encounter:
             new (&data.encounter) EncounterInstance(other.data.encounter);
@@ -71,7 +69,7 @@ class Item {
             kind = other.kind;
             switch (other.kind) {
             case ItemKind::Duck:
-                new (&data.duck) DuckInstance(other.data.duck);
+                new (&data.duck) DuckInstancePlacement(other.data.duck);
                 break;
             case ItemKind::Encounter:
                 new (&data.encounter) EncounterInstance(other.data.encounter);
@@ -86,7 +84,7 @@ class Item {
     ItemKind kind;
 
     union ItemData {
-        DuckInstance duck;
+        DuckInstancePlacement duck;
         EncounterInstance encounter;
 
         ItemData() {}
@@ -96,7 +94,7 @@ class Item {
     void destroy() {
         switch (kind) {
         case ItemKind::Duck:
-            data.duck.~DuckInstance();
+            data.duck.~DuckInstancePlacement();
             break;
         case ItemKind::Encounter:
             data.encounter.~EncounterInstance();

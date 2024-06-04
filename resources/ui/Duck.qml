@@ -5,14 +5,14 @@ import ise.nork
 
 Rectangle {
     id: duck_parent
-    required property int xpos
-    required property int ypos
+    property int xpos
+    property int ypos
     property real scaler: 1.0
+    property bool claimed : false;
     required property string texturePath
     required property string name
     required property string description
     required property int instance_id;
-
     DuckController{
       id: dctrl
       instance_id: duck_parent.instance_id
@@ -50,10 +50,13 @@ Rectangle {
             background: Rectangle {
                 color: "lightgray"
                 radius: 5
-            }
-            Text {
-                text: duck_parent.name + "\n" + duck_parent.description
-                padding: 5
+                width: flavorText.paintedWidth + 10
+                height: flavorText.paintedHeight + 8
+                Text {
+                    id: flavorText
+                    text: "<h4>" + duck_parent.name + "</h4>" + (duck_parent.claimed ? ("\n<i>" + duck_parent.description + "</i>") : "")
+                    padding: 5
+                }
             }
         }
     }

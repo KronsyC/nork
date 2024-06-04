@@ -7,8 +7,22 @@
 #include <string>
 namespace nork {
 
+///
+/// Catalogs a duck type, which may have many instances
+///
+class DuckClass {
+  public:
+    std::string id;
+    std::string name;
+    std::string description;
+    std::string texture_path;
 
-uint16_t next_duckinstance_id();
+    std::string getId() { return this->id; }
+
+    DuckClass(std::string id, std::string name, std::string description, std::string texture)
+        : id(id), name(name), description(description), texture_path(texture) {}
+};
+std::string next_duckinstance_id();
 
 ///
 /// Specific Instance of a duck class
@@ -17,37 +31,23 @@ uint16_t next_duckinstance_id();
 ///
 struct DuckInstance {
     std::string class_id;
-    uint16_t x_pos;
-    uint16_t y_pos;
-    uint16_t uid;
+    std::string uid;
+    bool claimed = false;
+    std::string getId() { return this->uid; }
+
+    DuckClass* get_class();
 };
 
-///
-/// Catalogs a duck type, which may have many instances
-///
-class DuckClass{
-public:
-    std::string id;
-    std::string name;
-    std::string description;
-    std::string texture_path;
 
-    std::string getId(){
-      return this->id;
-  }
-
-
-  DuckClass(std::string id, std::string name, std::string description, std::string texture)
-    : id(id),
-      name(name), 
-      description(description),
-    texture_path(texture){
-  }
-
-
+struct DuckInstancePlacement{
+  uint16_t x;
+  uint16_t y;
+  std::string instance_id;
 };
+
 
 using DuckDatabase = Database<DuckClass>;
+using DuckInstanceDatabase = Database<DuckInstance>;
 } // namespace nork
 
 #endif // !NORK_ITEM_DUCK_H

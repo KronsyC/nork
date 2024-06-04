@@ -22,36 +22,13 @@
 #ifndef NORK_INVENTORY_H
 #define NORK_INVENTORY_H
 
-#include "item.h"
-#include <cstdint>
-#include <memory>
-
 namespace nork {
-class Inventory {
-    using SLOTIDX_T = uint16_t;
 
-    SLOTIDX_T nslots;
-
-    ///
-    ///
-    ///
-    struct InventorySlot {
-        std::unique_ptr<nork::Item> item;
-
-        InventorySlot(std::unique_ptr<nork::Item> item);
-
-        static InventorySlot blank();
-    };
-
-  public:
-    Inventory(SLOTIDX_T nslots);
-
-    ///
-    /// Removes an item from an inventory slot
-    /// returns wether an item was removed or not
-    ///
-    bool removeItem(SLOTIDX_T slot);
+class Inventory{
+  
 };
-} // namespace nork
+
+}
+
 
 #endif // !NORK_INVENTORY_H

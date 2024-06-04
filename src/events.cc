@@ -1,4 +1,4 @@
-#include "location/location_change_pub.h"
+#include "events.h"
 
 
 using namespace nork;
@@ -7,3 +7,4 @@ using namespace nork;
 
 
 std::unique_ptr<LocationChangePublisher> LocationChangePublisher::instance;
+std::unique_ptr<DuckClaimPublisher> DuckClaimPublisher::instance;

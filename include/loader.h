@@ -38,6 +38,7 @@ namespace nork{
     DuckDatabase ducks;
     EncounterDatabase encounters;
     LocationStore locations;
+    DuckInstanceDatabase duck_instances;
   };
 
 

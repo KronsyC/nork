@@ -20,10 +20,7 @@
 //
 
 #include "ui/minimap.h"
-#include "location/location.h"
-#include "location/location_change_pub.h"
-#include "qlogging.h"
-#include<iostream>
+#include "events.h"
 
 nork::ui::MiniMapController::MiniMapController(QObject* parent) : QObject(parent) {}
 
@@ -32,5 +29,4 @@ nork::ui::MiniMapController::MiniMapController(QObject* parent) : QObject(parent
 
 void nork::ui::MiniMapController::handle_location_click(QString location_id){
   LocationChangePublisher::get().publish(LocationChangeEvent(location_id.toStdString()));
-  // std::cout << "Location Clicked: " << location_id << std::endl;
 }

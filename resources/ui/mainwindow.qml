@@ -43,11 +43,7 @@ ApplicationWindow {
                 width: parent.width - bottomRightPart.width
                 height: parent.height
 
-                Text {
-                    anchors.centerIn: parent
-                    text: "Bottom Left Part"
-                    font.pixelSize: 20
-                }
+                Inventory{}
             }
 
             // Bottom right part

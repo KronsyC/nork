@@ -1,31 +1,27 @@
-#ifndef NORK_UI_DUCK_H
-#define NORK_UI_DUCK_H
+#ifndef NORK_INVENTORY_H
+#define NORK_INVENTORY_H
 
+#include "events.h"
 #include "item/duck.h"
+#include "pubsub/subscriber.h"
+#include "qcontainerfwd.h"
 #include "qobject.h"
-#include "qtmetamacros.h"
+#include "qqmllist.h"
 #include <QObject>
-#include <QString>
-#include <cstdint>
+#include <QQmlListProperty>
+#include <QVector>
 
 namespace nork::ui {
 
-///
-/// DuckData holds the data associated with a duck
-///
-class DuckData : public QObject {
+class DuckInventoryEntry : public QObject {
     Q_OBJECT
+
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
     Q_PROPERTY(QString texturePath READ texturePath NOTIFY texturePathChanged)
     Q_PROPERTY(QString instance_id READ instanceId NOTIFY instanceIdChanged)
-    Q_PROPERTY(int x_pos MEMBER x_pos NOTIFY positionChanged)
-    Q_PROPERTY(int y_pos MEMBER y_pos NOTIFY positionChanged)
-
   public:
-    DuckData(QObject* parent = nullptr) : QObject(parent) {}
-    DuckData(DuckInstance* instance, uint16_t x, uint16_t y, QObject* parent = nullptr)
-        : QObject(parent), instance(instance), x_pos(x), y_pos(y) {}
+    DuckInventoryEntry(DuckInstance* instance, QObject* parent) : QObject(parent), instance(instance) {}
 
     QString name() const { return QString::fromStdString(instance->get_class()->name); }
     QString description() const { return QString::fromStdString(instance->get_class()->description); }
@@ -41,27 +37,31 @@ class DuckData : public QObject {
 
   private:
     DuckInstance* instance;
-    int x_pos;
-    int y_pos;
 };
 
-///
-/// DuckController handles actions associated with ducks
-///
-class DuckController : public QObject {
+class InventoryController : public QObject, public Subscriber<DuckClaimEvent> {
     Q_OBJECT
-    Q_PROPERTY(uint16_t instance_id MEMBER instance_id REQUIRED)
+
+
+    Q_PROPERTY( QQmlListProperty<DuckInventoryEntry> ducks READ ducks NOTIFY ducksChanged )
 
   public:
-    DuckController(QObject* parent = nullptr);
+    InventoryController(QObject* parent = nullptr);
+    ~InventoryController();
+    virtual void on_event(DuckClaimEvent& event) override;
 
+
+  QQmlListProperty<DuckInventoryEntry> ducks(){
+    return QQmlListProperty<DuckInventoryEntry>(this, &entries);
+  }
   signals:
-
-  public slots:
-    void handleClaim();
+    void ducksChanged();
 
   private:
-    uint16_t instance_id;
+
+    QVector<DuckInventoryEntry*> entries;
 };
+
 } // namespace nork::ui
-#endif // !NORK_UI_DUCK_H
+
+#endif

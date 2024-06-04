@@ -3,18 +3,17 @@
 
 #include <QObject>
 #include "location/location.h"
-#include "location/location_change_pub.h"
+#include "events.h"
 #include "pubsub/subscriber.h"
 #include "qcontainerfwd.h"
 #include "qqmllist.h"
 #include "ui/duck.h"
 #include<QQmlListProperty>
 #include<QVector>
-#include "qlogging.h"
 namespace nork::ui {
 
 
-class DisplayController : public QObject, public Subscriber<LocationChangeEvent> {
+class DisplayController : public QObject, public Subscriber<LocationChangeEvent>, public Subscriber<DuckClaimEvent> {
     Q_OBJECT
 
 
@@ -25,6 +24,7 @@ class DisplayController : public QObject, public Subscriber<LocationChangeEvent>
     ~DisplayController();
 
     virtual void on_event(LocationChangeEvent& event) override;
+    virtual void on_event(DuckClaimEvent& event) override;
 
     QString getSceneUrl(){
       return QString::fromStdString(current_location->get_scene());
@@ -44,6 +44,10 @@ class DisplayController : public QObject, public Subscriber<LocationChangeEvent>
 
   private:
     QVector<nork::ui::DuckData*> m_ducks = QVector<nork::ui::DuckData*>();
+
+
+
+    void redraw_ducks();
 
 };
 } // namespace nork::ui

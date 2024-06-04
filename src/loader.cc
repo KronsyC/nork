@@ -37,7 +37,7 @@ LoadedResources& nork::load_resources() {
 
 
   if(!resources_loaded){
-    auto locations = LOAD(LOCATIONS_SPEC, LocationStore);
+    auto ducks_and_locations = LOAD(LOCATIONS_SPEC, DucksAndLocations);
     auto ducks = LOAD(DUCKS_SPEC, DuckDatabase);
     auto encounters = LOAD(ENCOUNTERS_SPEC, EncounterDatabase);
 
@@ -46,7 +46,8 @@ LoadedResources& nork::load_resources() {
     nork::LOADED_RESOURCES = LoadedResources{
       ducks,
       encounters,
-      locations,
+      ducks_and_locations.locations,
+      ducks_and_locations.ducks
     };
     resources_loaded = true;
   }

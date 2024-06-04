@@ -8,8 +8,9 @@ using nork::Loader;
 using json = nlohmann::json;
 
 template<>
-LocationStore Loader<LocationStore>::load(){
+nork::DucksAndLocations Loader<nork::DucksAndLocations>::load(){
   LocationStore locs;
+  DuckInstanceDatabase didb;
   for(auto item : this->data.items()){
     std::string lname = item.key();
     json value = item.value();
@@ -19,7 +20,6 @@ LocationStore Loader<LocationStore>::load(){
     Location l(lname, scene);
     if(!items.is_null()){
       for(auto item : items.items()){
-        std::cout << item << std::endl;
         json data = item.value();
 
         std::string kind = data["kind"];
@@ -30,14 +30,15 @@ LocationStore Loader<LocationStore>::load(){
           uint16_t x = position["x"];
           uint16_t y = position["y"];
 
-          Item duck(DuckInstance{
-            duck_class,
-            x,
-            y,
-            nork::next_duckinstance_id()
-          });
+          std::string instance_id = nork::next_duckinstance_id();
+
+          DuckInstance duck_instance(duck_class, instance_id);
+          DuckInstancePlacement instance_placement(x, y, instance_id);
+
+          Item duck(instance_placement);
 
           l.items.push_back(duck);
+          didb.add(duck_instance);
         }
         else if(kind == "Encounter"){
 
@@ -53,6 +54,8 @@ LocationStore Loader<LocationStore>::load(){
   }
 
 
-  return locs;
+  return nork::DucksAndLocations{
+    locs, didb
+  };
 }
 

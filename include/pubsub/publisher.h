@@ -4,6 +4,7 @@
 #include "subscriber.h"
 #include <algorithm>
 #include <vector>
+#include<iostream>
 namespace nork {
 
 template <typename T> class Publisher {

@@ -7,8 +7,14 @@
 
   "duck.exton": {
     "name": "Chris Peckston",
-    "description": "I'm an Atheist",
+    "description": "Say 'Yes Chris'",
     "texture": "ducks/texture/exton.png"
+  },
+
+  "duck.jj": {
+    "name": "Jay Jay",
+    "description": "Don't ask about the beanie",
+    "texture": "ducks/texture/beano.png"
   },
 
   "duck.naem": {
@@ -99,6 +105,12 @@
     "name": "Daniel Moody",
     "description": "*crickets*",
     "texture": "ducks/texture/missing.png"
+  },
+
+  "duck.heaphy": {
+    "name": "Dara Heaphy",
+    "description": "Im the bomb!",
+    "texture": "ducks/texture/duckie.png"
   }
 
 

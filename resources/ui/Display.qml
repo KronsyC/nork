@@ -9,7 +9,6 @@ Rectangle {
         id: dtrl
 
         onLocationUpdate: loc => {
-            console.log("LOC UPDATE");
         }
 
         onSceneURLChanged: {
@@ -18,7 +17,6 @@ Rectangle {
 
         onDucksChanged: {
             duck_list.model = dtrl.ducks;
-            console.log(dtrl.ducks[0].texturePath);
         }
         //   console.log("GO TO ")
         // }

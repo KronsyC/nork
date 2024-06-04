@@ -1,5 +1,5 @@
-#ifndef NORK_LOCATION_CHANGE_PUB_H
-#define NORK_LOCATION_CHANGE_PUB_H
+#ifndef NORK_EVENTS_H
+#define NORK_EVENTS_H
 
 #include <iostream>
 #include <memory>
@@ -13,6 +13,10 @@ struct LocationChangeEvent {
     LocationChangeEvent(std::string lid) : new_location_id(lid) {}
 };
 
+struct DuckClaimEvent {
+    uint16_t instance_id;
+};
+
 // Globally available Location Change Publisher singleton
 class LocationChangePublisher : public Publisher<LocationChangeEvent> {
     static std::unique_ptr<LocationChangePublisher> instance;
@@ -21,10 +25,24 @@ class LocationChangePublisher : public Publisher<LocationChangeEvent> {
 
   public:
     static LocationChangePublisher& get() {
-        std::cout << "Get Instance" << std::endl;
         if (instance == nullptr) {
-            std::cout << "Create" << std::endl;
             instance = std::unique_ptr<LocationChangePublisher>(new LocationChangePublisher());
+            // Initialize the publisher
+        }
+        return *instance.get();
+    }
+};
+
+// Globally available Duck Claim Publisher singleton
+class DuckClaimPublisher : public Publisher<DuckClaimEvent> {
+    static std::unique_ptr<DuckClaimPublisher> instance;
+
+    DuckClaimPublisher() : Publisher<DuckClaimEvent>() {}
+
+  public:
+    static DuckClaimPublisher& get() {
+        if (instance == nullptr) {
+            instance = std::unique_ptr<DuckClaimPublisher>(new DuckClaimPublisher());
             // Initialize the publisher
         }
         return *instance.get();

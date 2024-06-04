@@ -2,6 +2,7 @@
 #define NORK_LOCATION_H
 
 #include "database/database.tcc"
+#include "item/duck.h"
 #include "item/item.h"
 #include <string>
 #include <vector>
@@ -23,6 +24,15 @@ class Location {
 };
 
 using LocationStore = Database<Location>;
+
+
+struct DucksAndLocations{
+  LocationStore locations;
+  DuckInstanceDatabase ducks;
+};
+
 } // namespace nork
+
+
 
 #endif // !NORK_LOCATION_H

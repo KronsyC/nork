@@ -18,14 +18,16 @@ sources = files(
   'src/ui/minimap.cc',
   'src/ui/display.cc',
   'src/ui/duck.cc',
+  'src/ui/inventory.cc',
 
   'src/location/location.cc',
   'src/location/loader.cc',
-  'src/location/change_publisher.cc',
 
   'src/item/item.cc',
   'src/item/loader.cc',
   'src/loader.cc',
+
+  'src/events.cc'
 )
 
 qrc_sources = files(

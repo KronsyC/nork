@@ -7,6 +7,7 @@
 #include "ui/mainwindow.h"
 #include "ui/minimap.h"
 #include "ui/display.h"
+#include "ui/inventory.h"
 
 using namespace nork::ui;
 
@@ -18,4 +19,6 @@ void ise::nork::register_types(const char* ns, int ver_minor, int ver_major){
     REGISTER(DisplayController);
     REGISTER(DuckController);
     REGISTER(DuckData);
+    REGISTER(InventoryController);
+    REGISTER(DuckInventoryEntry);
 }
