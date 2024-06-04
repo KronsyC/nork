@@ -3,8 +3,10 @@
 #include<QQmlApplicationEngine>
 #include<QQmlContext>
 
+#include "ui/duck.h"
 #include "ui/mainwindow.h"
 #include "ui/minimap.h"
+#include "ui/display.h"
 
 using namespace nork::ui;
 
@@ -12,6 +14,8 @@ using namespace nork::ui;
 
 void ise::nork::register_types(const char* ns, int ver_minor, int ver_major){
     REGISTER(MainWindow);
-    REGISTER(MiniMap);
-    // qmlRegisterType<MainWindow>("ise.nork", 1, 0, "MainWindow");
+    REGISTER(MiniMapController);
+    REGISTER(DisplayController);
+    REGISTER(DuckController);
+    REGISTER(DuckData);
 }

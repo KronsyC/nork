@@ -3,5 +3,7 @@
     <file>mainwindow.qml</file>
     <file>LocationIndicator.qml</file>
     <file>MiniMap.qml</file>
+    <file>Display.qml</file>
+    <file>Duck.qml</file>
   </qresource>
 </RCC>

@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/ducks">
+   <file>spec.json</file>
+   <file>texture/classic.png</file>
+   <file>texture/small_duck.jpg</file>
+   <file>texture/duckie.png</file>
+   <file>texture/beano.png</file>
+   <file>texture/shortie.png</file>
+   <file>texture/girlie.png</file>
+   <file>texture/exton.png</file>
+   <file>texture/missing.png</file>
+   <file>texture/nerdie.png</file>
+  </qresource>
+</RCC>

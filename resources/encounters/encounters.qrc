@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/encounters">
+    <file>spec.json</file>
+  </qresource>
+</RCC>

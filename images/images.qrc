@@ -1,7 +1,0 @@
-
-<RCC>
-  <qresource prefix="/images">
-    <file>minimap.jpg</file>
-    <file>location_indicator.png</file>
-  </qresource>
-</RCC>

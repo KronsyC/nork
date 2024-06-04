@@ -27,12 +27,14 @@
 #include <QObject>
 
 namespace nork::ui {
-class MiniMap : public QObject {
+class MiniMapController : public QObject {
     Q_OBJECT
 
   public:
-    explicit MiniMap(QObject* parent = nullptr);
+    explicit MiniMapController(QObject* parent = nullptr);
   public slots:
+
+    void handle_location_click(QString location_id);
   signals:
 };
 } // namespace nork::ui

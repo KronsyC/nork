@@ -1,0 +1,13 @@
+
+<RCC>
+  <qresource prefix="/images">
+    <file>minimap.jpg</file>
+    <file>location_indicator.png</file>
+    <file>sc/east_wing.jpg</file>
+    <file>sc/north_wing.jpg</file>
+    <file>sc/south_wing.jpg</file>
+    <file>sc/forest_room.jpg</file>
+    <file>sc/north_chairs.jpg</file>
+    <file>sc/south_chairs.jpg</file>
+  </qresource>
+</RCC>

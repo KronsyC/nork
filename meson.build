@@ -1,7 +1,7 @@
 project('nork', 'cpp',
   version : '0.1',
   default_options : ['warning_level=1',
-                     'cpp_std=c++17'])
+                     'cpp_std=c++20'])
 
 # Add QT Dep
 qt6 = import('qt6')
@@ -13,13 +13,27 @@ incdir = include_directories('include')
 sources = files(
   'src/main.cc',
   'src/register.cc',
+
   'src/ui/mainwindow.cc',
   'src/ui/minimap.cc',
+  'src/ui/display.cc',
+  'src/ui/duck.cc',
+
+  'src/location/location.cc',
+  'src/location/loader.cc',
+  'src/location/change_publisher.cc',
+
+  'src/item/item.cc',
+  'src/item/loader.cc',
+  'src/loader.cc',
 )
 
 qrc_sources = files(
-  'ui/qml.qrc',
-  'images/images.qrc'
+  'resources/ui/qml.qrc',
+  'resources/images/images.qrc',
+  'resources/locations/locations.qrc',
+  'resources/ducks/ducks.qrc',
+  'resources/encounters/encounters.qrc'
 )
 
 subdir('include/ui')

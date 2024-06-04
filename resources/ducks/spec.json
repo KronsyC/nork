@@ -1,0 +1,105 @@
+{
+  "duck.classic": {
+    "name": "Classic Duck",
+    "description": "It doesnt get better than this",
+    "texture": "ducks/texture/classic.png"
+  },
+
+  "duck.exton": {
+    "name": "Chris Peckston",
+    "description": "I'm an Atheist",
+    "texture": "ducks/texture/exton.png"
+  },
+
+  "duck.naem": {
+    "name": "Naem Qaq",
+    "description": "*yap* *yap* *yap*",
+    "texture": "ducks/texture/duckie.png"
+  },
+
+  "duck.justyna": {
+    "name": "Justyna Ducksieborska",
+    "description": "Ermm... what the sigma?",
+    "texture": "ducks/texture/girlie.png"
+  },
+
+  "duck.elice": {
+    "name": "Elice Nelswim",
+    "description": "You're quack is showing",
+    "texture": "ducks/texture/beano.png"
+  },
+
+  "duck.michelle": {
+    "name": "Michael Vazbender",
+    "description": "The Woices....",
+    "texture": "ducks/texture/shortie.png"
+  },
+
+  "duck.kelly": {
+    "name": "Kelly A. Boatley",
+    "description": "Ah Girls",
+    "texture": "ducks/texture/girlie.png"
+  },
+
+  "duck.jack": {
+    "name": "Quack Casey",
+    "description": "What's good, gooner?",
+    "texture": "ducks/texture/duckie.png"
+  },
+
+  "duck.samir": {
+    "name": "Samir B. Flood",
+    "description": "I wanna drown",
+    "texture": "ducks/texture/duckie.png"
+  },
+
+  "duck.ushen": {
+    "name": "Ocean Wijayaquackne",
+    "description": "So theres this thing on Deliveroo..",
+    "texture": "ducks/texture/nerdie.png"
+  },
+
+  "duck.alison": {
+    "name": "Avian McDuckett",
+    "description": "Ah Lads",
+    "texture": "ducks/texture/girlie.png"
+  },
+
+  "duck.ruan": {
+    "name": "Ruin O'Drowned",
+    "description": "I am a smelly belgian",
+    "texture": "ducks/texture/duckie.png"
+  },
+
+  "duck.conor": {
+    "name": "Conor Browne",
+    "description": "ᓭ𝙹 ||𝙹⚍  ↸𝙹 ℸ ̣⍑ᒷ ℸ ̣⍑╎リ ⊣",
+    "texture": "ducks/texture/nerdie.png"
+  },
+
+
+  "duck.jean": {
+    "name": "Jean Carswim",
+    "description": "Academic Weaponry",
+    "texture": "ducks/texture/girlie.png"
+  },
+
+  "duck.tiernan": {
+    "name": "Tiernan Sqully",
+    "description": "Whaaaat!?!",
+    "texture": "ducks/texture/nerdie.png"
+  },
+  "duck.tomas": {
+    "name": "Tomás Deane",
+    "description": "Where are my bagels",
+    "texture": "ducks/texture/duckie.png"
+  },
+
+  "duck.daniel": {
+    "name": "Daniel Moody",
+    "description": "*crickets*",
+    "texture": "ducks/texture/missing.png"
+  }
+
+
+}

@@ -19,18 +19,22 @@
 // OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#include "json.hpp"
+#include "loader.h"
 #include "register.h"
+#include <QFile>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QWindow>
-#include "inventory.h"
+using json = nlohmann::json;
+using nork::LoadedResources;
 
 int main(int argc, char** argv) {
+
+    LoadedResources resources = nork::load_resources();
+
     QGuiApplication app(argc, argv);
-
-    // nork::Inventory playerInventory(25);
-
     QQmlApplicationEngine engine;
 
     ise::nork::register_types("ise.nork", 0, 1);

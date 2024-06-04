@@ -11,7 +11,11 @@ ApplicationWindow {
 
     height: 800
     width: 1000
+    maximumHeight: height
+    maximumWidth: width
 
+    minimumHeight: height
+    minimumWidth: width
     Column {
         anchors.fill: parent
 
@@ -21,11 +25,9 @@ ApplicationWindow {
             color: "lightblue"
             width: parent.width
             height: parent.height * 0.7
+          
+            Display{
 
-            Text {
-                anchors.centerIn: parent
-                text: "Top Part"
-                font.pixelSize: 30
             }
         }
 

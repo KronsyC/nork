@@ -2,6 +2,7 @@
 
 import QtQuick.Controls 2.12
 import QtQuick
+import ise.nork
 
 Button{
 
@@ -10,6 +11,7 @@ Button{
   property string location
   property real xpos
   property real ypos
+  property MiniMapController mmc
 
   icon.name: "location"
   icon.source: "/images/location_indicator.png"
@@ -22,7 +24,8 @@ Button{
   background: null
 
   onClicked: {
-    console.log("GOTO Location: '" + location + "'")
+    console.log("GOTO Location: '" + location + "'");
+    mmc.handle_location_click(location);
   }
 
 }

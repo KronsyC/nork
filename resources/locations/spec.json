@@ -1,0 +1,163 @@
+{
+  "loc.south_wing": {
+    "scene": "images/sc/south_wing.jpg",
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.naem",
+        "pos": {
+          "x": 750,
+          "y": 160
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.elice",
+        "pos": {
+          "x": 50,
+          "y": 400
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.justyna",
+        "pos": {
+          "x": 20,
+          "y": 200
+        }
+      }
+    ]
+  },
+  "loc.north_chairs": {
+    "scene": "images/sc/north_chairs.jpg",
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.conor",
+        "pos": {
+          "x": 430,
+          "y": 430
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.jean",
+        "pos": {
+          "x": 215,
+          "y": 450
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.ruan",
+        "pos": {
+          "x": 500,
+          "y": 355
+        }
+      }
+    ]
+  },
+  "loc.south_chairs": {
+    "scene": "images/sc/south_chairs.jpg",
+
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.michelle",
+        "pos": {
+          "x": 200,
+          "y": 400
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.kelly",
+        "pos": {
+          "x": 750,
+          "y": 250
+        }
+      }
+    ]
+  },
+  "loc.forest_room": {
+    "scene": "images/sc/forest_room.jpg",
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.samir",
+        "pos": {
+          "x": 50,
+          "y": 450
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.jack",
+        "pos": {
+          "x": 270,
+          "y": 460
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.ushen",
+        "pos": {
+          "x": 570,
+          "y": 410
+        }
+      }
+    ]
+  },
+  "loc.north_wing": {
+    "scene": "images/sc/north_wing.jpg",
+
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.exton",
+        "pos": {
+          "x": 550,
+          "y": 450
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.alison",
+        "pos": {
+          "x": 170,
+          "y": 360
+        }
+      }
+    ]
+  },
+  "loc.east_wing": {
+    "scene": "images/sc/east_wing.jpg",
+    "items": [
+      {
+        "kind": "Duck",
+        "class": "duck.daniel",
+        "pos": {
+          "x": 400,
+          "y": 370
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.tiernan",
+        "pos": {
+          "x": 600,
+          "y": 380
+        }
+      },
+      {
+        "kind": "Duck",
+        "class": "duck.tomas",
+        "pos": {
+          "x": 740,
+          "y": 410
+        }
+      }
+    ]
+  }
+
+}
